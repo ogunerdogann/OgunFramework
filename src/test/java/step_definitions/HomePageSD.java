@@ -7,6 +7,7 @@ import static hooks.Hooks.commonPage;
 
 public class HomePageSD extends CommonPage{
 
+    /*
     HomePage homePage = new HomePage();
     public void a () {
         // 1 . way
@@ -18,7 +19,7 @@ public class HomePageSD extends CommonPage{
         // 4.way extends
         getHomePage().navbarList1.get(0);
         }
-
+     */
 
 
 }

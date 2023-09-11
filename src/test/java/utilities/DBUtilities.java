@@ -95,6 +95,7 @@ public class DBUtilities {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(mapList.toString());
         return mapList;
     }
 

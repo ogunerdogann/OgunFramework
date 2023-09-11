@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.junit.Test;
+import utilities.DBUtilities;
 
 import java.sql.*;
 
@@ -35,7 +36,7 @@ public class databaseSD {
 
     String email = "ogn.deneme@ogn.com";
     @Given("connection mysql database")
-    public void connectionMysqlDatabase() {
+    public void  connectionMysqlDatabase() {
         // getConnection hata gösteriyor try-catch ile cevrele
         try {
             connection = DriverManager.getConnection("jdbc:mysql://test.kesifplus.com:3306/kesifplus",
@@ -99,5 +100,10 @@ public class databaseSD {
 
         System.out.println(System.getProperty("user.dir"));
         System.out.println(System.getProperty("user.home")+"\\Downloads");
+    }
+
+    @When("sql database bilgisi yazdir")
+    public void sqlDatabaseBilgisiYazdir() {
+        DBUtilities.getUsersInfoSqlite();
     }
 }

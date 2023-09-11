@@ -74,13 +74,19 @@ public class Hooks {
     }
 
 
-    @Before("@DB")
-    public void setupDatabase() {
+    @Before("@MDB")
+    public void setupMySqlDatabase() {
         DBUtilities.createMysqlConnection("kesifplus");
 
     }
 
-    @After("@DB")
+    @Before("@SQLiteDB")
+    public void setupSQLiteDatabase() {
+        DBUtilities.createSqliteConnection();
+
+    }
+
+    @After("@SQLiteDB")
     public void closeDatabase() {
         DBUtilities.closeDatabase();
 
@@ -92,7 +98,5 @@ public class Hooks {
                 "email : " + ConfigurationReader.getProperty("user1_email") +
                         " password : " + ConfigurationReader.getProperty("user1_password")
         );
-
-
     }
 }
