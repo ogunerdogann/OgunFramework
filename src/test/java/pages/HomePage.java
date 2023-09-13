@@ -12,6 +12,14 @@ public class HomePage  extends CommonPage {
 
     public List<String> coursesUI= new ArrayList<>();
 
+    //Home button
+    @FindBy(xpath = "//*[text()='Home']")
+    public WebElement homeButton;
+
+    //About us button
+    @FindBy(xpath = "//*[text()='About Us']")
+    public WebElement aboutUsButton;
+
     // Programs Button side bar
     @FindBy(xpath = "//*[text()='Programs']")
     public  WebElement programsButton;

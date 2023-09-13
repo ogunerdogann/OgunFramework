@@ -14,11 +14,14 @@ public abstract class CommonPage {
     private HomePage homePage;
     private LoginPage loginPage;
 
+    //Üst satirda tanimladigimiz objeler private oldugu icin bu objeleri cagirmak istedigimizde getter'lari kullaniyoruz.
+    //Baska class'larda bu getter sayesinde HomePage ve LoginPage objelerine ulasabilecegiz
 
     public  HomePage getHomePage() {
-        if (homePage == null){
-            homePage = new HomePage();
-        }
+        if (homePage == null){   // bos ise icini doldur getir, ici dolu ise direk getir
+            homePage = new HomePage(); //böylece biz cagirmadigimiz sürece obje olusmayacak ve Heap Memory'i sisirmeyecegiz
+        } // Eger objeji en yukarida tanimlayip deger atasaydik (private HomePage homePage = new HomePage();)
+        // O zaman kullanmadigimiz zamanlarda bile objeyi olusturup icini dolduracakti. Gereksiz hafiza kullanimi olurdu bu.
         return homePage;
     }
 
