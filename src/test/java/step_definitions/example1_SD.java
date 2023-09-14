@@ -1,5 +1,6 @@
 package step_definitions;
 
+import enums.EnumClass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -54,5 +55,17 @@ public class example1_SD extends CommonPage {
 
     public void assertUrl(String expectedUrl){
         Assert.assertEquals(expectedUrl,driver.getCurrentUrl());
+    }
+
+
+    @Then("assert with enum")
+    public void assertWithEnum() {
+        EnumClass.HOMEPAGE.assertUrl();
+
+        EnumClass.ABOUT_US_PAGE.clickPage();
+        EnumClass.ABOUT_US_PAGE.assertUrl();
+
+        EnumClass.CONTACT_US_PAGE.clickPage();
+        EnumClass.CONTACT_US_PAGE.assertUrl();
     }
 }
