@@ -41,4 +41,5 @@ public enum EnumClass {
 
         commonPage.getHomePage().navbarlist.get(this.index).click();
     }
+
 }
