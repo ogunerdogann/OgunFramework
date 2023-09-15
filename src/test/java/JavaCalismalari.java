@@ -14,5 +14,7 @@ public class JavaCalismalari {
         // way 2 enum class kullanimi
         EnumClass.HOMEPAGE.assertUrl();
         System.out.println(EnumClass.HOMEPAGE.getUrl());
+
+
     }
 }
