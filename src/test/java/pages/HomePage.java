@@ -41,19 +41,19 @@ public class HomePage  extends CommonPage {
     public WebElement loginButton;
 
     @FindBy(css = "section>div[class^='user-course']")
-    private static List<WebElement> courses;
+    public List<WebElement> courses;
 
     @FindBy(css = "div.package1 button")
-    private static WebElement silver_getStarted;
+    public WebElement silver_getStarted;
 
     @FindBy(css = "div.package2 button")
-    private static WebElement gold_getStarted;
+    public WebElement gold_getStarted;
 
     @FindBy(css = "div.package3 button")
-    private static WebElement platin_getStarted;
+    public WebElement platin_getStarted;
 
     @FindBy(css = "h4.pricing-h4")
-    private static WebElement planAndPricingText;
+    public WebElement planAndPricingText;
 
 
 
