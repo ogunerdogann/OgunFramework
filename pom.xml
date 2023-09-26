@@ -6,12 +6,15 @@
 
     <groupId>org.example</groupId>
     <artifactId>Ogun_Framework</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.target>20</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- set latest manifold version here -->
+        <manifold.version>2023.1.26</manifold.version>
+
     </properties>
 
     <dependencies>
@@ -159,7 +162,7 @@
         <dependency>
             <groupId>systems.manifold</groupId>
             <artifactId>manifold-ext-rt</artifactId>
-            <version>2023.1.25</version>
+            <version>${manifold.version}</version>
         </dependency>
 
 
@@ -230,22 +233,22 @@
                 </executions>
             </plugin>
 
-            <plugin>
+            <!--   <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>17</source>
                     <target>17</target>
                 </configuration>
-            </plugin>
+            </plugin>-->
 
-            <!--                <plugin>
+            <plugin>
                                     <groupId>org.apache.maven.plugins</groupId>
                                     <artifactId>maven-compiler-plugin</artifactId>
-                                    <version>3.8.0</version>
+                                    <version>3.8.1</version>
                                     <configuration>
-                                        <source>18</source>
-                                        <target>18</target>
+                                        <source>19</source>
+                                        <target>19</target>
                                         <encoding>UTF-8</encoding>
                                         <compilerArgs>
 
@@ -261,7 +264,7 @@
                                         </annotationProcessorPaths>
                                     </configuration>
                                 </plugin>
-                            -->
+
 
         </plugins>
     </build>
