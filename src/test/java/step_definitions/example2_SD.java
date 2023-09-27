@@ -1,15 +1,9 @@
 package step_definitions;
 
+import enums.LINKS;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lombok.SneakyThrows;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-
-import javax.swing.*;
-import java.time.Duration;
 
 import static hooks.Hooks.*;
 import static utilities.BrowserUtilities.*;
@@ -85,6 +79,16 @@ public class example2_SD {
 
     @Then("user should able to see  background color and text color are expected value")
     public void userShouldAbleToSeeBackgroundColorAndTextColorAreExpectedValue() {
+
+        // WAY 4 ENUM'lar Kullanarak
+        LINKS.BEFORE_PLATIN.assertBackgroundOfWebElement(commonPage.getHomePage().platin_getStarted);
+        LINKS.BEFORE_PLATIN.assertTextColorOfWebElement(commonPage.getHomePage().platin_getStarted);
+
+        // imlecle üzerine geldikten sonra arka plan rengi nasil degisiyor
+        hoverWebElement(commonPage.getHomePage().silver_getStarted);
+        waitFor(1);
+
+        LINKS.AFTER_PLATIN.assertBackGroundAndTextColor(commonPage.getHomePage().platin_getStarted );
     }
 
 }
